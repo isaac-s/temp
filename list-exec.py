@@ -43,5 +43,5 @@ if deployments_to_delete:
     print("Deployments marked for deletion:\n\t{}".format('\n\t'.join(deployments_to_delete)))
     if not dry_run:
         for deployment in deployments_to_delete:
-            print("Deleting deployment: {}".format(deployment.id))
-            cm_client.deployments.delete(deployment.id, ignore_live_nodes=True)
+            print("Deleting deployment: {}".format(deployment))
+            cm_client.deployments.delete(deployment, ignore_live_nodes=True)
